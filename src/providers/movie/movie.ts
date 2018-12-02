@@ -15,7 +15,6 @@ export class MovieProvider {
   private apiKey = "api_key=7df2fa6696347ec7f081ef69f3fa997d";
 
   constructor(public http: Http) {
-    console.log('Hello MovieProvider Provider');
   }
 
   public buscarFilmes(page : number): Observable<any> {

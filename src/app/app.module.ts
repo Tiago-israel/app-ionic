@@ -1,3 +1,6 @@
+import { FirebaseConfig } from './../providers/config/firebase.config';
+import { PrefilPageModule } from './../pages/prefil/prefil.module';
+import { ConfiguracoesPageModule } from './../pages/configuracoes/configuracoes.module';
 import { IntroPageModule } from './../pages/intro/intro.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +17,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedPageModule } from '../pages/feed/feed.module';
 import {HttpModule} from '@angular/http'
 import { MovieProvider } from '../providers/movie/movie';
+import { SobrePageModule } from '../pages/sobre/sobre.module';
+import { AngularFireModule } from "angularfire2";
 
 @NgModule({
   declarations: [
@@ -27,7 +32,11 @@ import { MovieProvider } from '../providers/movie/movie';
     BrowserModule,
     FeedPageModule,
     IntroPageModule,
+    ConfiguracoesPageModule,
+    SobrePageModule,
+    PrefilPageModule,
     HttpModule,
+    AngularFireModule.initializeApp(FirebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
